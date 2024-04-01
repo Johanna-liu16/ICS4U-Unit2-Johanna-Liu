@@ -40,6 +40,26 @@ final class Main {
         System.out.println("Popped snack item: " + removedSnack);
         System.out.println("Snacks: " + snack.showStack() + "\n");
 
+        // input
+        final Stack numbers = new Stack();
+        numbers.push("One");
+        numbers.push("Two");
+        numbers.push("Three");
+        System.out.println("Numbers: " + numbers.showStack());
+        String removedNumber = numbers.pop();
+        System.out.println("Popped number item: " + removedNumber);
+        System.out.println("Numbers: " + numbers.showStack() + "\n");
+
+        // input
+        final Stack fruits = new Stack();
+        fruits.push("Mango");
+        fruits.push("Kiwi");
+        fruits.push("Papaya");
+        System.out.println("Fruits: " + fruits.showStack());
+        String removedFruit = fruits.pop();
+        System.out.println("Popped fruit item: " + removedFruit);
+        System.out.println("Fruits: " + fruits.showStack());
+
         System.out.println("\nDone.");
     }
 }

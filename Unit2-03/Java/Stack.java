@@ -1,4 +1,4 @@
-hi/*
+/*
  * This program uses stacks
  *
  * @author  Johanna Liu

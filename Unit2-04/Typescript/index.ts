@@ -36,4 +36,14 @@ console.log(`The size of the stack is: ${treatsStack.stackSize()}`)
 // is stack empty
 console.log(`Is the stack empty? ${treatsStack.isEmpty()}`)
 
+// return top item
+console.log(`Top item is ${treatsStack.peekItem()}`)
+
+// empty the stack
+console.log(`Emptying the stack...`)
+treatsStack.clearStack()
+
+// is stack empty
+console.log(`Is the stack empty? ${treatsStack.isEmpty()}`)
+
 console.log(`\nDone.`)

@@ -36,4 +36,14 @@ console.log(`Numbers: ${numberStack.stackSize()}`)
 // empty?
 console.log(`Is the stack empty? ${numberStack.isEmpty()}`)
 
+// return top item
+console.log(`Top item is ${numberStack.peekItem()}`)
+
+// empty the stack
+console.log(`Emptying the stack...`)
+numberStack.clearStack()
+
+// is stack empty
+console.log(`Is the stack empty? ${numberStack.isEmpty()}`)
+
 console.log(`\nDone`)

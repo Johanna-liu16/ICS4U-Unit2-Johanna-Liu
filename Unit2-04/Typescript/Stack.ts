@@ -42,21 +42,25 @@ class Stack {
       return remove
     }
 
-    public isEmpty(): string {
-      let stackStatus = ""
-      if (this.stackList.length > 0) {
-        stackStatus = "False"
-      } else {
-        stackStatus = "True"
-      }
-      return stackStatus
+    public isEmpty() {
+      return this.stackList.length == 0
     }
 
     public stackSize(): string {
       let size = this.stackList.length
       return size
     }
-  }
-  
+
+    public peekItem(): string {
+      let topItem = ""
+      topItem = this.stackList[0]
+      return topItem
+    }
+
+    public clearStack() {
+      this.stackList = []
+    }
+}
+
   // Export the class
   export default Stack;

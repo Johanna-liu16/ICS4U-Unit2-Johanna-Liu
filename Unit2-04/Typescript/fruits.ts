@@ -36,4 +36,14 @@ console.log(`Fruits: ${fruitStack.stackSize()}`)
 // empty?
 console.log(`Is the stack empty? ${fruitStack.isEmpty()}`)
 
+// return top item
+console.log(`Top item is ${fruitStack.peekItem()}`)
+
+// empty the stack
+console.log(`Emptying the stack...`)
+fruitStack.clearStack()
+
+// is stack empty
+console.log(`Is the stack empty? ${fruitStack.isEmpty()}`)
+
 console.log(`\nDone`)

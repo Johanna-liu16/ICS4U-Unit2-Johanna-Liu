@@ -8,26 +8,26 @@
 class Stack {
     //create stack as list
     private stackList: string[]
-  
+
     constructor() {
       this.stackList = []
     }
-  
+
     public push(pushedString: string): void {
       // push the value onto the stack
       this.stackList.push(pushedString)
     }
-  
+
     // getters
     public showStack(): string {
     // return the stack
       let stackValues: string = ""
-  
+
       for (const value of this.stackList) {
         stackValues += value + ", "
       }
       stackValues = stackValues.slice(0, -2) // Remove the trailing comma
-  
+
       return stackValues
     }
     // methods

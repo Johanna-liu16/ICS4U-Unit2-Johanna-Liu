@@ -17,3 +17,5 @@ public class Vehicle {
         private numberOfDoors: number
         private maxSpeen: number
         private theSpeed: number
+
+

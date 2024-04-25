@@ -1,42 +1,74 @@
-/** 
- * This program defines a stack
- * By:      Johanna Liu
- * Version: 1.0
- * Since:   2024-03-03
+/*
+ * This stack is for a vechicle.
+ *
+ * @author  Johanna
+ * @version 1.0
+ * @since   2024-04-24
  */
 
-import type { NamedTupleMember } from "typescript";
-
 export default class Vehicle {
-    private color: string
-    private licencePlate: string
-    readonly doorNumber: number
-    readonly maxSpeed: number
-    readonly theSpeed: number
+  private color: string
+  private licencePlate: string
+  readonly numberOfDoors: number
+  readonly maxSpeed: number
+  readonly _speed: number
 
   // variables
-  constructor(color: string, licencePlate: string, doorNumber: number, maxSpeed: number) {
+  constructor(color: string, licencePlate: string, numberOfDoors: number, maxSpeed: number) {
     this.color = color
     this.licencePlate = licencePlate
-    this.doorNumber = doorNumber
+    this.numberOfDoors = numberOfDoors
     this.maxSpeed = maxSpeed
-    this.theSpeed = 0
-  }   
+    this._speed = 0
+  }
 
-  // get color
-  public color() {
+  //get colour
+  public get color() {
     return this.color
   }
 
-  public speed() {
-    return this.maxSpeed
+  //get current speed
+  public get licencePlate() {
+    return this.licencePlate
   }
 
-  public getDoors() {
-    return this.doorNumber
+  // get current speed
+  public get speed() {
+    return this._speed
   }
 
-  public speed() {
-    return this.theSpeed
+  //set colour
+  public set color(color: string) {
+    this.color = color
+  }
+
+  //set current speed
+  public set licencePlate(licencePlate: string) {
+    this.licencePlate = licencePlate
+  }
+
+  // checks if stack is empty
+  public status() {
+    console.log(" -> Speed: " + this._speed)
+    console.log(" -> Max Speed: " + this.maxSpeed)
+    console.log(" -> Number Of Doors: " + this.numberOfDoors)
+    console.log(" -> Licence Plate: " + this.licencePlate)
+    console.log(" -> Color: " + this.color)
+  }
+
+  // change speed via accelerating formula
+  public accelerate (accelerationPower: number, accelerationTime: number) {
+    this._speed = (accelerationPower * accelerationTime) + this._speed
+    if (this._speed > this.maxSpeed) {
+      this._speed = this.maxSpeed
+    }
+  }
+
+  // change speed via braking formula
+  public break (breakPower: number, breakTime: number) {
+    this._speed = this._speed - (breakPower * breakTime)
+    if (this._speed < 0) {
+      this._speed = 0
+    }
   }
 }

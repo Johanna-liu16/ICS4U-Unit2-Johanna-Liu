@@ -6,23 +6,22 @@
  * @since   2024-04-24
  */
 
-// Airplane class
+// This is the airplane class.
 export class Airplane {
   private speed: number
 
-  //constuctor
+  // Constructor.
   public Airplane() {
   }
 
-  // the set  speed
-  public setSpeed() {
-    theSpeed = this.speed
+  // Set speed
+  public setSpeed(speed: number) {
+      this.speed = speed
   }
 
-  // get the speed
-  public getSpeed() {
-    theSpeed = this.speed
-    return theSpeed
+  // Get the speed
+  public getSpeed(): number {
+      return this.speed
   }
 }
 

@@ -11,15 +11,15 @@ import { Airplane } from "./Airplane"
 export class Jet extends Airplane {
   private Multiplier: number = 2
 
-  // constructor
-  public Jet() {
-  }
+     // Constructor.
+     public Jet() {
+     }
 
-  public setSpeet() {
-    super.setSpeed(speed * this.Multiplier)
+  public setSpeed(speed: number) {
+      super.setSpeed(speed * this.MULTIPLIER)
   }
 
   public accelerate() {
-    super.setSpeed(super.setSpeed() * 2)
+      super.setSpeed(super.getSpeed() * 2)
   }
 }

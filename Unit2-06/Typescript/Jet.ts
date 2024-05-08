@@ -8,18 +8,25 @@
 
 import { Airplane } from "./Airplane"
 
+/**
+* This is the jet class.
+*/
 export class Jet extends Airplane {
-  private Multiplier: number = 2
+    /** Jet speed change multiplier. */
+    private MULTIPLIER: number = 2
 
-     // Constructor.
-     public Jet() {
-     }
+    // Constructor.
+    public Jet() {
+        // super()
+    }
 
-  public setSpeed(speed: number) {
-      super.setSpeed(speed * this.MULTIPLIER)
-  }
+    // Set jet speed.
+    public setSpeed(speed: number) {
+        super.setSpeed(speed * this.MULTIPLIER)
+    }
 
-  public accelerate() {
-      super.setSpeed(super.getSpeed() * 2)
-  }
+    // Double speed.
+    public accelerate() {
+        super.setSpeed(super.getSpeed() * 2)
+    }
 }

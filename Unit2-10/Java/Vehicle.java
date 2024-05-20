@@ -9,7 +9,7 @@
 /**
 * This is the vehicle class.
 */
-public class Vehicle {
+abstract class Vehicle {
     /**
      * Variables.
     */
@@ -36,7 +36,7 @@ public class Vehicle {
      * @param color the base colour
      * @param maxSpeed the maximum speed of the vehicle
     */
-    public Vehicle(String color, double maxSpeed) {
+    Vehicle(String color, double maxSpeed) {
         this.colour = color;
         this.speed = 0;
         this.maxSpeed = maxSpeed;
@@ -84,22 +84,14 @@ public class Vehicle {
      *
      * @return the string about the vehicle's status
     */
-    public String getStatus() {
-        final String lineBreak = "\n";
-        String status = " -> Speed: " + this.speed + lineBreak;
-        status += " -> MaxSpeed: " + this.maxSpeed + lineBreak;
-        status += " -> Number of tires: " + this.numberOfTires + lineBreak;
-        status += " -> Color: " + this.colour + lineBreak;
-
-        return status;
-    }
+    abstract String getStatus();
 
     /**
      * Sets the colour of the vehicle.
      *
      * @param newColour of the vehicle
     */
-    public void setColour(String newColour) {
+    void setColour(String newColour) {
         this.colour = newColour;
     }
 
@@ -118,7 +110,7 @@ public class Vehicle {
      * @param accelPower power of the acceleration
      * @param accelTime time of the acceleration
     */
-    public void accelerate(double accelPower, double accelTime) {
+    void accelerate(double accelPower, double accelTime) {
         this.speed = (accelPower * accelTime) + this.speed;
         if (this.speed > this.maxSpeed) {
             this.speed = this.maxSpeed;
@@ -131,7 +123,7 @@ public class Vehicle {
      * @param brakePower power of the brake
      * @param brakeTime time of the brake
     */
-    public void brake(double brakePower, double brakeTime) {
+    void brake(double brakePower, double brakeTime) {
         this.speed = this.speed - (brakePower * brakeTime);
         if (this.speed < 0) {
             this.speed = 0;

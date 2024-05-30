@@ -71,9 +71,9 @@ final class Stack {
      *
      * @return The size
      */
-    public int size() {
-        int stackSize = stack.length;
-        return stackSize;
+    public int stackSize() {
+        int size = stack.length;
+        return size;
     }
 
     /**
@@ -91,5 +91,16 @@ final class Stack {
         }
         values += "";
         return values;
+    }
+
+    public String peek() {
+        return stack[stack.length - 1];
+    }
+
+    public String[] clear() {
+        if (stack.length > 0) {
+            stack = new String[0];
+        }
+        return stack;
     }
 }

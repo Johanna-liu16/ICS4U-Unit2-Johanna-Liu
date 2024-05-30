@@ -32,7 +32,7 @@ final class Main {
     public static void main(final String[] args) {
         // input
         final Stack snack = new Stack();
-        System.out.println("The size of the stack is: " + snack.size());
+        System.out.println("The size of the stack is: " + snack.stackSize());
         System.out.println("Is the stack empty? " + snack.isEmpty());
         snack.push("Chips");
         snack.push("Chocolate");
@@ -41,7 +41,11 @@ final class Main {
         String removedSnack = snack.pop();
         System.out.println("Popped snack item: " + removedSnack);
         System.out.println("Snacks: " + snack.showStack());
-        System.out.println("The size of the stack is: " + snack.size());
+        System.out.println("The size of the stack is: " + snack.stackSize());
+        System.out.println("Is the stack empty? " + snack.isEmpty());
+        System.out.println("Top item is " + snack.peek());
+        snack.clear();
+        System.out.println("Emptying the stack...");
         System.out.println("Is the stack empty? " + snack.isEmpty());
 
         System.out.println("\nDone.");

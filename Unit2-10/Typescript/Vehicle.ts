@@ -6,41 +6,37 @@
  * @since   2024-05-13
  */
 
-export abstract class Vehicle {
+abstract class Vehicle {
   protected color: string
+  protected speed: number
   protected maxSpeed: number
-  protected _speed: number
-  protected numberOfTires: int
+  protected tireNum: number
 
-  // variables
-  constructor(color: string, maxSpeed: number) {
+  constructor (speed = 0, maxSpeed = 0, color = 'unknown', tireNum = 0) {
     this.color = color
+    this.speed = speed
     this.maxSpeed = maxSpeed
-    this.numberOfTires = -1
-    this._speed = 0
+    this.tireNum = tireNum
   }
 
-  //get colour
-  public get color() {
-    return this.color
+  // acceleration method
+  accelerate (accelerationPower: number, accelerationTime: number) {
+    this.speed += (accelerationPower * accelerationTime)
+    console.log(`New speed: ${this.speed}`)
   }
 
-  // get current speed
-  public get speed() {
-    return this._speed
+  // brake method
+  break (brakePower: number, brakeTime: number) {
+    this.speed -= (brakePower * brakeTime)
+    return this.speed
   }
 
-  //set colour
-  public set color(color: string) {
-    this.color = color
+  // status method
+  status (): void {
+    console.log(`-> Speed: ${this.speed}`)
+    console.log(`-> Max Speed: ${this.maxSpeed}`)
+    console.log(`-> Color: ${this.color}`)
+    console.log(`-> Tires: ${this.tireNum}`)
   }
-
-  // checks if stack is empty
-  abstract status(): string
-
-  // change speed via accelerating formula
-  abstract accelerate (accelerationPower: number, accelerationTime: number): void
-
-  // change speed via braking formula
-  abstract brake(breakPower: number, breakTime: number): void
 }
+export default Vehicle
